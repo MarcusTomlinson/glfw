@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.10)
 project(FlutterEmbedderGLFW)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11" )
 
@@ -20,8 +20,15 @@ target_link_libraries(flutter_glfw ${GLFW_LIB})
 ############################################################
 # This is assuming you've built a local version of the Flutter Engine.  If you
 # downloaded yours is from the internet you'll have to change this.
-include_directories(${CMAKE_SOURCE_DIR}/../../shell/platform/embedder)
-find_library(FLUTTER_LIB flutter_engine PATHS ${CMAKE_SOURCE_DIR}/../../../out/host_debug_unopt)
+include_directories(${CMAKE_SOURCE_DIR}/../engine/src/flutter/shell/platform/embedder)
+
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    find_library(FLUTTER_LIB flutter_engine PATHS ${CMAKE_SOURCE_DIR}/../engine/src/out/host_debug_unopt)
+endif ()
+if (CMAKE_BUILD_TYPE STREQUAL "Release")
+    find_library(FLUTTER_LIB flutter_engine PATHS ${CMAKE_SOURCE_DIR}/../engine/src/out/host_release_unopt)
+endif ()
+
 target_link_libraries(flutter_glfw ${FLUTTER_LIB})
 
 # Copy the flutter library here since the shared library

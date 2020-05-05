@@ -1,0 +1,15 @@
+{
+    "terminal.integrated.shell.windows": "cmd.exe",
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "files.watcherExclude": {
+        "**/subprojects/AndroidNDK/**": true
+    },
+    "files.associations": {
+        "any": "cpp",
+        "filesystem": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "*.ipp": "cpp",
+        "string": "cpp"
+    }
+}

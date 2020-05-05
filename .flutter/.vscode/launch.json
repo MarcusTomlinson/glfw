@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "embedder_unittests (Debug)",
+            "program": "${workspaceFolder}/../out/host_debug_unopt/embedder_unittests",
+            "cwd": "${workspaceFolder}/../out/host_debug_unopt", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
+        },
+        {
+            "name": "embedder_unittests (Release)",
+            "program": "${workspaceFolder}/../out/host_release_unopt/embedder_unittests",
+            "cwd": "${workspaceFolder}/../out/host_release_unopt", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
+        },
+        {
+            "name": "FlutterEmbedderGLFW (Debug)",
+            "program": "/home/marcustomlinson/Projects/flutter/glfw/debug/flutter_glfw",
+            "args": ["/home/marcustomlinson/Projects/flutter/glfw/debug/myapp",
+                     "${workspaceFolder}/../third_party/icu/common/icudtl.dat"],
+            "cwd": "${workspaceFolder}/examples/glfw/", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
+        },
+        {
+            "name": "FlutterEmbedderGLFW (Release)",
+            "program": "/home/marcustomlinson/Projects/flutter/glfw/release/flutter_glfw",
+            "args": ["/home/marcustomlinson/Projects/flutter/glfw/release/myapp",
+                     "${workspaceFolder}/../third_party/icu/common/icudtl.dat"],
+            "cwd": "${workspaceFolder}/examples/glfw/", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
+        }
+    ]
+}
