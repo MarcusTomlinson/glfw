@@ -1,3 +1,7 @@
+First, edit the line: `data_in.elf_path = "..."` in FlutterEmbedderGLFW.cc to point to where your app.so will end up.
+
+Then run the following:
+
 ```
 ./build-release.sh
 
