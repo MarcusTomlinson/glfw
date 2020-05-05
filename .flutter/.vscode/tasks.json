@@ -53,7 +53,7 @@
             },
             "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
                         // "rm -rf debug && rm -rf release &&",
-                        "./build-debug.sh",
+                        "./build-debug.sh &&",
                         "./build-release.sh"],
             "group": { "kind": "build", "isDefault": true },
             "problemMatcher": {
