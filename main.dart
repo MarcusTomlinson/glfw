@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart'
-    show debugDefaultTargetPlatformOverride;
 
 void main() {
-  // This is a hack to make Flutter think you are running on Google Fuchsia,
-  // otherwise you will get an error about running from an unsupported platform.
-  debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
   runApp(MyApp());
 }
 
