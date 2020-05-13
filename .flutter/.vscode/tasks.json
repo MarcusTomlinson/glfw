@@ -55,9 +55,10 @@
                 "cwd": "/home/marcustomlinson/Projects/flutter/glfw",
             },
             "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
-                        // "rm -rf debug && rm -rf release &&",
+                        // "rm -rf debug && rm -rf release && rm -rf profile &&",
                         "./build-debug.sh &&",
-                        "./build-release.sh"],
+                        "./build-release.sh &&",
+                        "./build-profile.sh"],
             "group": { "kind": "build", "isDefault": true },
             "problemMatcher": {
                 "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}"]

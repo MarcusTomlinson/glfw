@@ -33,6 +33,13 @@
             "cwd": "${workspaceFolder}/examples/glfw/", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
         },
         {
+            "name": "Fifteenpuzzle (Profile)",
+            "program": "/home/marcustomlinson/Projects/flutter/glfw/profile/flutter_glfw",
+            "args": ["/home/marcustomlinson/Projects/flutter/fifteenpuzzle/build/linux/profile/fifteenpuzzle",
+                     "${workspaceFolder}/../third_party/icu/common/icudtl.dat"],
+            "cwd": "${workspaceFolder}/examples/glfw/", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
+        },
+        {
             "name": "Fifteenpuzzle (Release)",
             "program": "/home/marcustomlinson/Projects/flutter/glfw/release/flutter_glfw",
             "args": ["/home/marcustomlinson/Projects/flutter/fifteenpuzzle/build/linux/release/fifteenpuzzle",
