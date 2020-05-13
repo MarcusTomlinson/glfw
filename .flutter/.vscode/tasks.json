@@ -11,7 +11,8 @@
                         "git pull upstream master && cd .. &&",
                         "gclient sync &&",
                         "./flutter/tools/gn --unoptimized &&",
-                        "./flutter/tools/gn --runtime-mode release --unoptimized"],
+                        "./flutter/tools/gn --runtime-mode release --unoptimized &&",
+                        "./flutter/tools/gn --runtime-mode profile --unoptimized"],
             "group": { "kind": "build", "isDefault": true },
             "problemMatcher": {
                 "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}"]
@@ -27,7 +28,9 @@
                         "ninja -C out/host_debug_unopt &&",
                         "cp out/host_debug_unopt/exe.unstripped/embedder_unittests out/host_debug_unopt/ &&",
                         "ninja -C out/host_release_unopt &&",
-                        "cp out/host_release_unopt/exe.unstripped/embedder_unittests out/host_release_unopt/"],
+                        "cp out/host_release_unopt/exe.unstripped/embedder_unittests out/host_release_unopt/ &&",
+                        "ninja -C out/host_profile_unopt &&",
+                        "cp out/host_profile_unopt/exe.unstripped/embedder_unittests out/host_profile_unopt/"],
             "group": { "kind": "build", "isDefault": true },
             "problemMatcher": {
                 "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_release_unopt"]
