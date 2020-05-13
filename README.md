@@ -1,4 +1,4 @@
-First, edit the line: `data_in.elf_path = "..."` in FlutterEmbedderGLFW.cc to point to where your app.so will end up.
+First, edit the lines: `data_in.elf_path = "..."` and `std::string assets_path = "...";` in FlutterEmbedderGLFW.cc to point to where your elf and assets files will end up.
 
 Then run the following:
 
