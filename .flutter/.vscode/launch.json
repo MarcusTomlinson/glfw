@@ -24,6 +24,20 @@
             "args": ["/home/marcustomlinson/Projects/flutter/glfw/release/myapp",
                      "${workspaceFolder}/../third_party/icu/common/icudtl.dat"],
             "cwd": "${workspaceFolder}/examples/glfw/", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
+        },
+        {
+            "name": "Fifteenpuzzle (Debug)",
+            "program": "/home/marcustomlinson/Projects/flutter/glfw/debug/flutter_glfw",
+            "args": ["/home/marcustomlinson/Projects/flutter/fifteenpuzzle/build/linux/debug/fifteenpuzzle",
+                     "${workspaceFolder}/../third_party/icu/common/icudtl.dat"],
+            "cwd": "${workspaceFolder}/examples/glfw/", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
+        },
+        {
+            "name": "Fifteenpuzzle (Release)",
+            "program": "/home/marcustomlinson/Projects/flutter/glfw/release/flutter_glfw",
+            "args": ["/home/marcustomlinson/Projects/flutter/fifteenpuzzle/build/linux/release/fifteenpuzzle",
+                     "${workspaceFolder}/../third_party/icu/common/icudtl.dat"],
+            "cwd": "${workspaceFolder}/examples/glfw/", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
         }
     ]
 }
