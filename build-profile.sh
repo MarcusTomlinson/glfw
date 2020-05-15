@@ -8,7 +8,7 @@ if [ ! -d profile ]; then
     mkdir profile
 fi
 cd profile
-cmake -DCMAKE_BUILD_TYPE=Profile ..
+cmake -DCMAKE_BUILD_TYPE=Release ..
 make
 
 #################################################################

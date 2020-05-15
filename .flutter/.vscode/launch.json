@@ -12,6 +12,16 @@
             "cwd": "${workspaceFolder}/../out/host_release_unopt", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
         },
         {
+            "name": "client_wrapper_glfw_unittests (Debug)",
+            "program": "${workspaceFolder}/../out/host_debug_unopt/client_wrapper_glfw_unittests",
+            "cwd": "${workspaceFolder}/../out/host_debug_unopt", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
+        },
+        {
+            "name": "client_wrapper_glfw_unittests (Release)",
+            "program": "${workspaceFolder}/../out/host_release_unopt/client_wrapper_glfw_unittests",
+            "cwd": "${workspaceFolder}/../out/host_release_unopt", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
+        },
+        {
             "name": "FlutterEmbedderGLFW (Debug)",
             "program": "/home/marcustomlinson/Projects/flutter/glfw/debug/flutter_glfw",
             "args": ["/home/marcustomlinson/Projects/flutter/glfw/debug/myapp",

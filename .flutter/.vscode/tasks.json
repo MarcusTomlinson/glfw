@@ -65,6 +65,57 @@
             }
         },
         {
+            "label": "Build Example (Debug)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
+            },
+            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+                        // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
+                        "flutter --local-engine=host_debug_unopt config --enable-linux-desktop &&",
+                        "flutter --local-engine=host_debug_unopt pub get &&",
+                        "flutter --local-engine=host_debug_unopt create ./ &&",
+                        "flutter --local-engine=host_debug_unopt build linux --debug"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_debug_unopt"]
+            }
+        },
+        {
+            "label": "Build Example (Profile)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
+            },
+            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+                        // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
+                        "flutter --local-engine=host_profile_unopt config --enable-linux-desktop &&",
+                        "flutter --local-engine=host_profile_unopt pub get &&",
+                        "flutter --local-engine=host_profile_unopt create ./ &&",
+                        "flutter --local-engine=host_profile_unopt build linux --profile"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_profile_unopt"]
+            }
+        },
+        {
+            "label": "Build Example (Release)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
+            },
+            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+                        // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
+                        "flutter --local-engine=host_release_unopt config --enable-linux-desktop &&",
+                        "flutter --local-engine=host_release_unopt pub get &&",
+                        "flutter --local-engine=host_release_unopt create ./ &&",
+                        "flutter --local-engine=host_release_unopt build linux --release"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_release_unopt"]
+            }
+        },
+        {
             "label": "Build (AOT Snapshot)",
             "type": "shell",
             "options": {
