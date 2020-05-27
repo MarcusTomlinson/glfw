@@ -55,6 +55,11 @@
             "args": ["/home/marcustomlinson/Projects/flutter/fifteenpuzzle/build/linux/release/fifteenpuzzle",
                      "${workspaceFolder}/../third_party/icu/common/icudtl.dat"],
             "cwd": "${workspaceFolder}/examples/glfw/", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
+        },
+        {
+            "name": "GTK Example (Debug)",
+            "program": "/home/marcustomlinson/Projects/flutter/flutter_linux_test/build/linux/debug/flutter_linux_test",
+            "cwd": "${workspaceFolder}/examples/glfw/", "type": "cppdbg", "request": "launch", "MIMode": "gdb"
         }
     ]
 }

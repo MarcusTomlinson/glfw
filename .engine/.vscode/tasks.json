@@ -1,0 +1,183 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Configure",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}",
+            },
+            "command": ["export PATH=/home/marcustomlinson/Projects/flutter/depot_tools:$PATH &&",
+                        "git pull upstream master && cd .. &&",
+                        "gclient sync &&",
+                        "./flutter/tools/gn --unoptimized &&",
+                        "./flutter/tools/gn --runtime-mode release --unoptimized &&",
+                        "./flutter/tools/gn --runtime-mode profile --unoptimized"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}"]
+            }
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/..",
+            },
+            "command": ["export PATH=/home/marcustomlinson/Projects/flutter/depot_tools:$PATH &&",
+                        "ninja -C out/host_debug_unopt &&",
+                        "cp out/host_debug_unopt/exe.unstripped/embedder_unittests out/host_debug_unopt/ &&",
+                        "ninja -C out/host_release_unopt &&",
+                        "cp out/host_release_unopt/exe.unstripped/embedder_unittests out/host_release_unopt/ &&",
+                        "ninja -C out/host_profile_unopt &&",
+                        "cp out/host_profile_unopt/exe.unstripped/embedder_unittests out/host_profile_unopt/"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_release_unopt"]
+            }
+        },
+        {
+            "label": "Format",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}",
+            },
+            "command": ["./ci/format.sh | patch -p0"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}"]
+            }
+        },
+        {
+            "label": "Build (FlutterEmbedderGLFW)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/marcustomlinson/Projects/flutter/glfw",
+            },
+            "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
+                        // "rm -rf debug && rm -rf release && rm -rf profile &&",
+                        "./build-debug.sh &&",
+                        "./build-release.sh &&",
+                        "./build-profile.sh"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}"]
+            }
+        },
+        {
+            "label": "Build GTK Example (Debug)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/marcustomlinson/Projects/flutter/flutter_linux_test",
+            },
+            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+                        // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
+                        "flutter build linux --debug"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_debug_unopt"]
+            }
+        },
+        {
+            "label": "Build Example (Debug)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
+            },
+            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+                        // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
+                        "flutter --local-engine=host_debug_unopt config --enable-linux-desktop &&",
+                        "flutter --local-engine=host_debug_unopt pub get &&",
+                        "flutter --local-engine=host_debug_unopt create ./ &&",
+                        "flutter --local-engine=host_debug_unopt build linux --debug"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_debug_unopt"]
+            }
+        },
+        {
+            "label": "Build Example (Profile)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
+            },
+            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+                        // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
+                        "flutter --local-engine=host_profile_unopt config --enable-linux-desktop &&",
+                        "flutter --local-engine=host_profile_unopt pub get &&",
+                        "flutter --local-engine=host_profile_unopt create ./ &&",
+                        "flutter --local-engine=host_profile_unopt build linux --profile"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_profile_unopt"]
+            }
+        },
+        {
+            "label": "Build Example (Release)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
+            },
+            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+                        // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
+                        "flutter --local-engine=host_release_unopt config --enable-linux-desktop &&",
+                        "flutter --local-engine=host_release_unopt pub get &&",
+                        "flutter --local-engine=host_release_unopt create ./ &&",
+                        "flutter --local-engine=host_release_unopt build linux --release"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_release_unopt"]
+            }
+        },
+        {
+            "label": "Build (AOT Snapshot)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/marcustomlinson/Projects/flutter/glfw/release/myapp",
+            },
+            "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
+                        "flutter config --enable-linux-desktop &&",
+                        "flutter pub get &&",
+                        // "flutter build linux &&",
+
+                        "/home/marcustomlinson/Projects/flutter/engine/src/out/host_release_unopt/dart",
+                        "/home/marcustomlinson/Projects/flutter/engine/src/out/host_release_unopt/frontend_server.dart.snapshot",
+                        "--sdk-root /home/marcustomlinson/Projects/flutter/engine/src/out/host_release_unopt/flutter_patched_sdk/",
+                        "--target=flutter",
+                        "--aot",
+                        "--tfa",
+                        "-Ddart.vm.product=true",
+                        "--packages .packages",
+                        "--output-dill build/kernel_snapshot.dill",
+                        "package:myapp/main.dart &&",
+
+                        "/home/marcustomlinson/Projects/flutter/engine/src/out/host_release_unopt/gen_snapshot",
+                        "--causal_async_stacks",
+                        "--deterministic",
+                        // core, core-jit, app, app-jit, app-aot-assembly, app-aot-elf, vm-aot-assembly
+                        "--snapshot_kind=app-aot-elf", // here's where the magic happens
+                        "--elf=build/app.so",
+                        // "--snapshot_kind=app-aot-assembly",
+                        // "--assembly=build/app.asm",
+                        // "--snapshot_kind=core-jit",
+                        // "--vm_snapshot_data=build/vm_snapshot_data",
+                        // "--isolate_snapshot_data=build/isolate_snapshot_data",
+                        // "--vm_snapshot_instructions=build/vm_snapshot_instr",
+                        // "--isolate_snapshot_instructions=build/isolate_snapshot_instr",
+                        "build/kernel_snapshot.dill"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}"]
+            }
+        },
+        {
+            "label": "Run Tests",
+            "type": "shell",
+            "command": "./testing/run_tests.sh",
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}"]
+            }
+        }
+    ]
+}
