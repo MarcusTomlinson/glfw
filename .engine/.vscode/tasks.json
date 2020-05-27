@@ -79,7 +79,7 @@
             }
         },
         {
-            "label": "Build Example (Debug)",
+            "label": "Build Fifteenpuzzle (Debug)",
             "type": "shell",
             "options": {
                 "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
@@ -96,7 +96,7 @@
             }
         },
         {
-            "label": "Build Example (Profile)",
+            "label": "Build Fifteenpuzzle (Profile)",
             "type": "shell",
             "options": {
                 "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
@@ -113,7 +113,7 @@
             }
         },
         {
-            "label": "Build Example (Release)",
+            "label": "Build Fifteenpuzzle (Release)",
             "type": "shell",
             "options": {
                 "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
