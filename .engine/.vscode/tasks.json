@@ -70,7 +70,7 @@
             "options": {
                 "cwd": "/home/marcustomlinson/Projects/flutter/flutter_linux_test",
             },
-            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+            "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
                         // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
                         "flutter build linux --debug"],
             "group": { "kind": "build", "isDefault": true },
@@ -84,8 +84,9 @@
             "options": {
                 "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
             },
-            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+            "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
                         // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
+                        "rm -rf ./linux && rm -rf ./build &&",
                         "flutter --local-engine=host_debug_unopt config --enable-linux-desktop &&",
                         "flutter --local-engine=host_debug_unopt pub get &&",
                         "flutter --local-engine=host_debug_unopt create ./ &&",
@@ -101,8 +102,9 @@
             "options": {
                 "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
             },
-            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+            "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
                         // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
+                        "rm -rf ./linux && rm -rf ./build &&",
                         "flutter --local-engine=host_profile_unopt config --enable-linux-desktop &&",
                         "flutter --local-engine=host_profile_unopt pub get &&",
                         "flutter --local-engine=host_profile_unopt create ./ &&",
@@ -118,8 +120,9 @@
             "options": {
                 "cwd": "/home/marcustomlinson/Projects/flutter/fifteenpuzzle",
             },
-            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+            "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
                         // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
+                        "rm -rf ./linux && rm -rf ./build &&",
                         "flutter --local-engine=host_release_unopt config --enable-linux-desktop &&",
                         "flutter --local-engine=host_release_unopt pub get &&",
                         "flutter --local-engine=host_release_unopt create ./ &&",
