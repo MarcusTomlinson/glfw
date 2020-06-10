@@ -72,7 +72,7 @@
             },
             "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
                         // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
-                        "flutter build linux --debug"],
+                        "flutter build linux -v --debug"],
             "group": { "kind": "build", "isDefault": true },
             "problemMatcher": {
                 "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_debug_unopt"]
@@ -86,11 +86,10 @@
             },
             "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
                         // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
-                        "rm -rf ./linux && rm -rf ./build &&",
                         "flutter --local-engine=host_debug_unopt config --enable-linux-desktop &&",
                         "flutter --local-engine=host_debug_unopt pub get &&",
-                        "flutter --local-engine=host_debug_unopt create ./ &&",
-                        "flutter --local-engine=host_debug_unopt build linux --debug"],
+                        "rm -rf ./linux && flutter --local-engine=host_debug_unopt create ./ &&",
+                        "rm -rf ./build && flutter --local-engine=host_debug_unopt build linux -v --debug"],
             "group": { "kind": "build", "isDefault": true },
             "problemMatcher": {
                 "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_debug_unopt"]
@@ -104,11 +103,10 @@
             },
             "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
                         // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
-                        "rm -rf ./linux && rm -rf ./build &&",
                         "flutter --local-engine=host_profile_unopt config --enable-linux-desktop &&",
                         "flutter --local-engine=host_profile_unopt pub get &&",
-                        "flutter --local-engine=host_profile_unopt create ./ &&",
-                        "flutter --local-engine=host_profile_unopt build linux --profile"],
+                        "rm -rf ./linux && flutter --local-engine=host_profile_unopt create ./ &&",
+                        "rm -rf ./build && flutter --local-engine=host_profile_unopt build linux -v --profile"],
             "group": { "kind": "build", "isDefault": true },
             "problemMatcher": {
                 "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_profile_unopt"]
@@ -122,11 +120,10 @@
             },
             "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
                         // "rm -f /home/marcustomlinson/Projects/flutter/flutter/bin/cache/flutter_tools.snapshot &&",
-                        "rm -rf ./linux && rm -rf ./build &&",
                         "flutter --local-engine=host_release_unopt config --enable-linux-desktop &&",
                         "flutter --local-engine=host_release_unopt pub get &&",
-                        "flutter --local-engine=host_release_unopt create ./ &&",
-                        "flutter --local-engine=host_release_unopt build linux --release"],
+                        "rm -rf ./linux && flutter --local-engine=host_release_unopt create ./ &&",
+                        "rm -rf ./build && flutter --local-engine=host_release_unopt build linux -v --release"],
             "group": { "kind": "build", "isDefault": true },
             "problemMatcher": {
                 "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_release_unopt"]
@@ -141,7 +138,7 @@
             "command": ["export PATH=/home/marcustomlinson/Projects/flutter/flutter/bin:$PATH &&",
                         "flutter config --enable-linux-desktop &&",
                         "flutter pub get &&",
-                        // "flutter build linux &&",
+                        // "flutter build linux -v &&",
 
                         "/home/marcustomlinson/Projects/flutter/engine/src/out/host_release_unopt/dart",
                         "/home/marcustomlinson/Projects/flutter/engine/src/out/host_release_unopt/frontend_server.dart.snapshot",

@@ -16,6 +16,19 @@
             }
         },
         {
+            "label": "Analyze",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}",
+            },
+            "command": ["export PATH=$PATH:/home/marcustomlinson/Projects/flutter/flutter/bin &&",
+                        "flutter analyze --flutter-repo"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc", "fileLocation": ["relative", "${workspaceFolder}/../out/host_release_unopt"]
+            }
+        },
+        {
             "label": "Run Tests",
             "type": "shell",
             "options": {
